@@ -2,8 +2,8 @@ from random import randint
 
 board = []
 
-for x in range(0, 5):
-  board.append(["O"] * 5)
+for x in range(0, 4):
+  board.append(["O"] * 4)
 
 def print_board(board):
   for row in board:
@@ -19,8 +19,6 @@ def random_col(board):
 
 ship_row = random_row(board)
 ship_col = random_col(board)
-print ship_row
-print ship_col
 
 # Everything from here on should be in your for loop
 # don't forget to properly indent!
@@ -33,8 +31,8 @@ for turn in range(4):
     print "Congratulations! You sank my battleship!"
     break
   else:
-    if guess_row not in range(5) or \
-      guess_col not in range(5):
+    if guess_row not in range(4) or \
+      guess_col not in range(4):
       print "Oops, that's not even in the ocean."
     elif board[guess_row][guess_col] == "X":
       print( "You guessed that one already." )
